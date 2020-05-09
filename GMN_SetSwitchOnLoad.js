@@ -39,11 +39,6 @@
 //=============================================================================
     var parameters = PluginManager.parameters('GMN_SetSwitchOnLoad');
     var enableOnLoad=parameters['enableOnLoad'];
-    var _DataManager_loadGame=DataManager.loadGame;
-    // DataManager.loadGame = function(savefileId) {
-    //     _DataManager_loadGame.apply(this,arguments);
-    //     $gameSwitches.setValue(enableOnLoad,true);
-    // };
     DataManager.loadGameWithoutRescue = function(savefileId) {
         var globalInfo = this.loadGlobalInfo();
         if (this.isThisGameFile(savefileId)) {
@@ -54,6 +49,7 @@
             $gameSwitches.setValue(enableOnLoad,true);
             return true;
         } else {
+            $gameSwitches.setValue(enableOnLoad,false);
             return false;
         }
     };
