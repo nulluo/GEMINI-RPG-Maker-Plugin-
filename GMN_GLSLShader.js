@@ -47,7 +47,7 @@
 /*:ja
  * @target MZ
  * @plugindesc ピクチャにGLSLシェーダーを適用します。
- * @url https://github.com/GEMINIGAMEDEV/plug-in/GMN_GLSLShader.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_GLSLShader.js
  * @author ジェミニ
  *
  * @help
