@@ -9,7 +9,7 @@
 /*:
  * @target MZ
  * @plugindesc Apply a GLSL shader to the picture.
- * @url https://github.com/GEMINIGAMEDEV/plug-in/GMN_GLSLShader.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_GLSLShader.js
  * @author GEMINI
  *
  * @help
@@ -22,6 +22,7 @@
  *
  * 2021/03/14 1.0.0 released
  * 2021/03/14 1.0.1 Refactoring
+ * 2021/03/14 1.0.2 Refactoring
  *
  * @command add
  * @text Add shader.
@@ -47,7 +48,7 @@
 /*:ja
  * @target MZ
  * @plugindesc ピクチャにGLSLシェーダーを適用します。
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_GLSLShader.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/GMN_GLSLShader.js
  * @author ジェミニ
  *
  * @help
@@ -60,6 +61,7 @@
  *
  * 2021/03/14 1.0.0 公開
  * 2021/03/14 1.0.1 リファクタリング
+ * 2021/03/14 1.0.2 リファクタリング
  *
  * @command add
  * @text シェーダー追加
@@ -87,14 +89,14 @@
   const pluginName = document.currentScript.src.match(/^.*\/(.*).js$/)[1];
   // command:add
   PluginManager.registerCommand(pluginName, "add", (args) => {
-    const sprite = getSprite(args.pictureId);
+    const sprite = getSprite(Number(args.pictureId));
     const filter = getGLSLFilter(args.fragmentSrc);
     sprite.setGLSLFilter(filter);
     sprite.addUniforms(filter);
   });
   // command:remove
   PluginManager.registerCommand(pluginName, "remove", (args) => {
-    const sprite = getSprite(args.pictureId);
+    const sprite = getSprite(Number(args.pictureId));
     sprite.clearGLSLFilter();
     sprite.removeUniforms();
   });
@@ -145,8 +147,7 @@
   const getSprite = (pictureId) => {
     const sprites = SceneManager._scene._spriteset._pictureContainer.children;
     // ピクチャ番号とSprite_Pictureのインデックスは1ずれているので合わせます。
-    const sprite = sprites[Number(pictureId) - 1];
-    return sprite;
+    return sprites[pictureId - 1];
   };
 
   //-----------------------------------------------------------------------------
