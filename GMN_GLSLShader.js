@@ -21,6 +21,7 @@
  * There are no plugin parameters for this plugin.
  *
  * 2021/03/14 1.0.0 released
+ * 2021/03/14 1.0.1 Refactoring
  *
  * @command add
  * @text Add shader.
@@ -58,6 +59,7 @@
  * このプラグインにプラグインパラメータはありません。
  *
  * 2021/03/14 1.0.0 公開
+ * 2021/03/14 1.0.1 リファクタリング
  *
  * @command add
  * @text シェーダー追加
@@ -65,7 +67,7 @@
  * @arg fragmentSrc
  * @type multiline_string
  * @text GLSLシェーダーのコード
- * @desc ピクチャに適用するシェーダーのコードを記述してください。GLSLの変数には uniforms time が使用できます。
+ * @desc ピクチャに適用するシェーダーのコードを記述してください。
  * @arg pictureId
  * @type number
  * @text 設定したいピクチャ番号
@@ -81,21 +83,25 @@
  *
  */
 (() => {
-  "use strict";
+  ("use strict");
   const pluginName = document.currentScript.src.match(/^.*\/(.*).js$/)[1];
-
+  // command:add
   PluginManager.registerCommand(pluginName, "add", (args) => {
-    const sprites = SceneManager._scene._spriteset._pictureContainer.children;
-    // ピクチャ番号とSprite_Pictureの番号は1ずれているようなので1引く
-    sprites[Number(args.pictureId) - 1].setGLSLFilter(args.fragmentSrc);
+    const sprite = getSprite(args.pictureId);
+    const filter = getGLSLFilter(args.fragmentSrc);
+    sprite.setGLSLFilter(filter);
+    sprite.addUniforms(filter);
   });
-
+  // command:remove
   PluginManager.registerCommand(pluginName, "remove", (args) => {
-    const sprites = SceneManager._scene._spriteset._pictureContainer.children;
-    // ピクチャ番号とSprite_Pictureの番号は1ずれているようなので1引く
-    sprites[Number(args.pictureId) - 1].resetGLSLFilter();
+    const sprite = getSprite(args.pictureId);
+    sprite.clearGLSLFilter();
+    sprite.removeUniforms();
   });
 
+  /**
+   * GLSLシェーダ用のフィルタを定義します。
+   */
   PIXI.filters.GLSLFilter = class extends PIXI.Filter {
     constructor(fragmentSrc) {
       super(
@@ -107,21 +113,86 @@
       );
     }
   };
+  /**
+   * GLSLシェーダ用のフィルタを取得します。
+   * @param {string} fragmentSrc
+   * @returns {PIXI.Filter} フィルタ
+   */
+  const getGLSLFilter = (fragmentSrc) => {
+    return new PIXI.filters.GLSLFilter(fragmentSrc);
+  };
+  /**
+   * 使用しているTickerを取得します。
+   * @returns {PIXI.ticker.Ticker} ticker
+   */
+  const getTicker = () => {
+    return Graphics._app._ticker;
+  };
+  /**
+   * tickerから経過時間を取得してGLSLシェーダーに連携します。
+   * @param {PIXI.Filter} GLSLFilter
+   * @param {PIXI.ticker.Ticker} ticker
+   */
+  const uniformsFunction = (GLSLFilter, ticker) => {
+    GLSLFilter.uniforms.time += ticker.elapsedMS * 0.001;
+  };
 
+  /**
+   * GLSLシェーダー処理対象となるピクチャのスプライトを返却します。
+   * @param {number} pictureId
+   * @returns {Sprite_Picture} GLSLシェーダー処理対象
+   */
+  const getSprite = (pictureId) => {
+    const sprites = SceneManager._scene._spriteset._pictureContainer.children;
+    // ピクチャ番号とSprite_Pictureのインデックスは1ずれているので合わせます。
+    const sprite = sprites[Number(pictureId) - 1];
+    return sprite;
+  };
+
+  //-----------------------------------------------------------------------------
+  // Sprite_Picture
+  //
+  // GLSLフィルタ及びuniformsの追加・除去用関数を追加します。
   const _Sprite_Picture_initialize = Sprite_Picture.prototype.initialize;
   Sprite_Picture.prototype.initialize = function (pictureId) {
     _Sprite_Picture_initialize.call(this, pictureId);
-    this.resetGLSLFilter();
+    this.clearGLSLFilter();
+    this.clearUniforms();
   };
-  Sprite_Picture.prototype.setGLSLFilter = function (fragmentSrc) {
-    const GLSLFilter = new PIXI.filters.GLSLFilter(fragmentSrc);
-    // timeを渡す
-    Graphics._app._ticker.add(function () {
-      GLSLFilter.uniforms.time += Graphics._app._ticker.elapsedMS * 0.001;
-    });
+  /**
+   * GLSLシェーダ用のフィルタを1つだけ設定します。
+   * @param {PIXI.Filter} GLSLFilter
+   */
+  Sprite_Picture.prototype.setGLSLFilter = function (GLSLFilter) {
     this.filters = [GLSLFilter];
   };
-  Sprite_Picture.prototype.resetGLSLFilter = function () {
+  /**
+   * GLSLシェーダ用のフィルタを消去します。
+   */
+  Sprite_Picture.prototype.clearGLSLFilter = function () {
     this.filters = [];
+  };
+  /**
+   * Tickerに関数を追加してGLSLシェーダで変数を利用可能にします。
+   * 作成したuniformsを保存して除去できるようにします。
+   * @param {PIXI.Filter} GLSLFilter
+   */
+  Sprite_Picture.prototype.addUniforms = function (GLSLFilter) {
+    const ticker = getTicker();
+    this._GLSLFilterUniforms = uniformsFunction(GLSLFilter, ticker);
+    ticker.add(this._GLSLFilterUniforms);
+  };
+  /**
+   * Tickerから関数を除去してGLSLシェーダで変数を利用不可能にします。
+   */
+  Sprite_Picture.prototype.removeUniforms = function () {
+    const ticker = getTicker();
+    ticker.remove(this._GLSLFilterUniforms);
+  };
+  /**
+   *　Sprite_Pictureのプロパティとして保管するuniformsをクリアします。
+   */
+  Sprite_Picture.prototype.clearUniforms = function () {
+    this._GLSLFilterUniforms = {};
   };
 })();
