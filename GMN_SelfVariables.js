@@ -1,7 +1,7 @@
 //=============================================================================
 // GMN_SelfVariables.js v1.0.0
 //=============================================================================
-// (C) 2020 Masataka Ogawa
+// (C) 2020 GEMINI
 // This software is released under the MIT License.
 // http://opensource.org/licenses/mit-license.php
 // ----------------------------------------------------------------------------
@@ -12,7 +12,7 @@
 //=============================================================================
 /*:
  * @plugindesc SelfVariables
- * @author Masataka Ogawa
+ * @author GEMINI
  *
  *
  * @help This plugin creates event's self variables.
@@ -27,11 +27,14 @@
  * this.getSelfVariable("A");
  *
  * This plugin has no plugin commands.
+ *
+ * 1.0.0 2020/05/09 First Version
+ * 1.1.0 2021/03/20 Author name change
  */
 
 /*:ja
  * @plugindesc セルフ変数
- * @author 小河真孝
+ * @author ジェミニ
  *
  * @help セルフ変数を作成します。
  *
@@ -44,6 +47,9 @@
  * this.getSelfVariable("A");
  *
  * このプラグインには、プラグインコマンドはありません。
+ *
+ * 1.0.0 2020/05/09 初版
+ * 1.1.0 2021/03/20 作者名変更
  */
 
 //-----------------------------------------------------------------------------
@@ -58,6 +64,7 @@ function Game_SelfVariables() {
 var $gameSelfVariables = null;
 
 (function () {
+  "use strict";
   Game_SelfVariables.prototype.initialize = function () {
     this.clear();
   };
@@ -124,6 +131,8 @@ var $gameSelfVariables = null;
   var _DataManager_extractSaveContents = DataManager.extractSaveContents;
   DataManager.extractSaveContents = function (contents) {
     _DataManager_extractSaveContents.apply(this, arguments);
-    $gameSelfVariables = contents.selfVariables ? contents.selfVariables : new Game_SelfVariables();
+    $gameSelfVariables = contents.selfVariables
+      ? contents.selfVariables
+      : new Game_SelfVariables();
   };
 })();

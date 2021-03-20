@@ -85,7 +85,7 @@
  *
  */
 (() => {
-  ("use strict");
+  "use strict";
   const pluginName = document.currentScript.src.match(/^.*\/(.*).js$/)[1];
   // command:add
   PluginManager.registerCommand(pluginName, "add", (args) => {

@@ -1,19 +1,15 @@
 // =============================================================================
-// GMN_ItemPriority.js v1.0.0
+// GMN_ItemPriority.js
 // =============================================================================
-// (C) 2020 "Masataka Ogawa"
+// (C) 2020 GEMINI
 // This software is released under the MIT License.
 // http://opensource.org/licenses/mit-license.php
 // ----------------------------------------------------------------------------
-// Version
-// 1.0.0 2020/06/03 初版
-// ----------------------------------------------------------------------------
 // [Twitter]: https://twitter.com/gemini_gamedev/
 // =============================================================================
-
 /*:
  * @plugindesc GMN_ItemPriority
- * @author Masataka Ogawa
+ * @author GEMINI
  *
  * @help You can set the priority by writing <GMN_Priority:100> in the memo field of the item.
  * When the priority is the same, it is in order of ID.
@@ -22,11 +18,13 @@
  * @type number
  * @min 0
  * @default 100
+ *
+ * 1.0.0 2020/04/02 First version
+ * 1.1.0 2021/03/20 Author name change
  */
-
 /*:ja
  * @plugindesc アイテム表示順プラグイン
- * @author 小河真孝
+ * @author ジェミニ
  *
  * @help アイテムのメモ欄に<GMN_Priority:100>のように記述して
  * 優先度をつけることができます。優先度が同じ場合にはID順となります。
@@ -36,9 +34,13 @@
  * @type number
  * @min 0
  * @default 100
+ *
+ * 1.0.0 2020/06/03 初版
+ * 1.1.0 2021/03/20 作者名変更
  */
 
 (function () {
+  "use strict";
   // =============================================================================
   // プラグイン パラメータ
   // =============================================================================
@@ -47,7 +49,6 @@
   // =============================================================================
   // GMN_ItemPriority
   // =============================================================================
-  ("use strict");
 
   function getPriority(elem) {
     var num = Number(elem.meta.GMN_Priority);
