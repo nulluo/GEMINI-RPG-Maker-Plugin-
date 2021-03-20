@@ -55,6 +55,7 @@
  * @type string
  * @text The URL you want to add.
  * @desc Set the URL you want to add, starting with http or https. Blank is OK.
+ * If you write <GAME>, it will be replaced by the URL where the game is actually deployed. (This will often be different from the page where the game is listed.)
  */
 /*:ja
  * @target MZ
@@ -105,6 +106,7 @@
  * @type string
  * @text 追加したいURL
  * @desc 追加したいURLをhttp or https始まりで設定してください。空欄OK。
+ * <GAME>と記述すると実際にゲームがデプロイされているURLに置き換わります。(ゲームが掲載されているページとは異なります。)
  */
 (() => {
   "use strict";
