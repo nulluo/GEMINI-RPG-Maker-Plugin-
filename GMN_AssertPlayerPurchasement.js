@@ -10,7 +10,7 @@
 /*:
  * @plugindesc AssertPlayerPurchasement
  * @author GEMINI
- * @help
+ *
  * @help Assign the number of purchases and sales in the store to variables.
  * Specify a variable to assign the number of purchases to buyCount and a variable to assign the number of sales to sellCount.
  *
