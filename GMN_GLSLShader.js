@@ -23,6 +23,7 @@
  * 2021/03/14 1.0.0 released
  * 2021/03/14 1.0.1 Refactoring
  * 2021/03/14 1.0.2 Refactoring
+ * 2021/03/20 1.1.0 Fixed variable time not being applied + other refactorings
  *
  * @command add
  * @text Add shader.
@@ -62,6 +63,7 @@
  * 2021/03/14 1.0.0 公開
  * 2021/03/14 1.0.1 リファクタリング
  * 2021/03/14 1.0.2 リファクタリング
+ * 2021/03/20 1.1.0 変数timeが適用できてなかったので修正+その他リファクタリング
  *
  * @command add
  * @text シェーダー追加
@@ -87,10 +89,13 @@
 (() => {
   "use strict";
   const pluginName = document.currentScript.src.match(/^.*\/(.*).js$/)[1];
+  const UNIFORMS_DEFAULT = 0.0;
+  const UNIFORMS_MILISECONDS = 0.001;
+  const VERTEX_SHADER_DEFAULT = null;
   // command:add
   PluginManager.registerCommand(pluginName, "add", (args) => {
     const sprite = getSprite(Number(args.pictureId));
-    const filter = getGLSLFilter(args.fragmentSrc);
+    const filter = createGLSLFilter(args.fragmentSrc);
     sprite.setGLSLFilter(filter);
     sprite.addUniforms(filter);
   });
@@ -104,13 +109,13 @@
   /**
    * GLSLシェーダ用のフィルタを定義します。
    */
-  PIXI.filters.GLSLFilter = class extends PIXI.Filter {
+  const Filter = class extends PIXI.Filter {
     constructor(fragmentSrc) {
       super(
-        null, // vertex shader
+        VERTEX_SHADER_DEFAULT, // vertex shader
         fragmentSrc, // fragment shader
         {
-          time: 0.0, // uniforms
+          time: UNIFORMS_DEFAULT, // uniforms
         }
       );
     }
@@ -120,23 +125,15 @@
    * @param {string} fragmentSrc
    * @returns {PIXI.Filter} フィルタ
    */
-  const getGLSLFilter = (fragmentSrc) => {
-    return new PIXI.filters.GLSLFilter(fragmentSrc);
+  const createGLSLFilter = (fragmentSrc) => {
+    return new Filter(fragmentSrc);
   };
   /**
    * 使用しているTickerを取得します。
    * @returns {PIXI.ticker.Ticker} ticker
    */
   const getTicker = () => {
-    return Graphics._app._ticker;
-  };
-  /**
-   * tickerから経過時間を取得してGLSLシェーダーに連携します。
-   * @param {PIXI.Filter} GLSLFilter
-   * @param {PIXI.ticker.Ticker} ticker
-   */
-  const uniformsFunction = (GLSLFilter, ticker) => {
-    GLSLFilter.uniforms.time += ticker.elapsedMS * 0.001;
+    return Graphics.app.ticker;
   };
 
   /**
@@ -180,7 +177,9 @@
    */
   Sprite_Picture.prototype.addUniforms = function (GLSLFilter) {
     const ticker = getTicker();
-    this._GLSLFilterUniforms = uniformsFunction(GLSLFilter, ticker);
+    this._GLSLFilterUniforms = () => {
+      GLSLFilter.uniforms.time += ticker.elapsedMS * UNIFORMS_MILISECONDS;
+    };
     ticker.add(this._GLSLFilterUniforms);
   };
   /**
@@ -194,6 +193,6 @@
    *　Sprite_Pictureのプロパティとして保管するuniformsをクリアします。
    */
   Sprite_Picture.prototype.clearUniforms = function () {
-    this._GLSLFilterUniforms = {};
+    this._GLSLFilterUniforms = () => {};
   };
 })();
