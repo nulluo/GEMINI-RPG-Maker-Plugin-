@@ -1,7 +1,7 @@
 //=============================================================================
 // GMN_SetSwitchOnLoad.js
 //=============================================================================
-// (C) 2020 Masataka Ogawa
+// (C) 2020 GEMINI
 // This software is released under the MIT License.
 // http://opensource.org/licenses/mit-license.php
 // ----------------------------------------------------------------------------
@@ -9,7 +9,7 @@
 //=============================================================================
 /*:
  * @plugindesc self variable
- * @author Masataka Kogawa
+ * @author GEMINI
  * @help Turn on the switch specified in the plugin parameter at load time.
  * There is no plugin command for this plugin.
  *
@@ -23,7 +23,7 @@
  */
 /*:ja
  * @plugindesc セルフ変数
- * @author 小河真孝
+ * @author ジェミニ
  * @help ロード時にプラグインパラメータで指定したスイッチをONにします。
  * このプラグインには、プラグインコマンドはありません。
  *
