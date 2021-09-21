@@ -12,7 +12,6 @@
  *
  * @help
  * You can write scripts in the window, including "Show Text".
- * If you write a script enclosed in back-quotes (`), the corresponding part will be replaced by the script's
  * If you write a script enclosed in back-quotes (`), the corresponding part of the script will be replaced by the result of execution.
  *
  *[Example usage]
@@ -21,6 +20,7 @@
  * ：　　：The number of events that exist is `$gameMap.events().length`.
  *
  * 2021/09/18 1.0.0 Published.
+ * 2021/09/18 1.1.0 Add error handling for error scripts
  */
 /*:ja
  * @target MZ
@@ -39,11 +39,23 @@
  * ：　　：存在するイベントは`$gameMap.events().length`個です。
  *
  * 2021/09/18 1.0.0 公開
+ * 2021/09/21 1.1.0 エラーハンドリングの追加
  */
 "use strict";
 {
   const variableExpansion = (text) => {
-    return text.replace(/`(.+)`/gi, (_, p1) => eval(p1));
+    return text.replace(/`(.+)`/gi, (_, p1) => {
+      try {
+        return eval(p1);
+      } catch (e) {
+        const msg = `スクリプト実行中にエラーが発生しました。
+        スクリプト:${p1}。
+        エラーメッセージ:${e}`;
+        console.error(msg);
+        alert(msg);
+        return p1;
+      }
+    });
   };
   const _Window_Base_convertEscapeCharacters =
     Window_Base.prototype.convertEscapeCharacters;
