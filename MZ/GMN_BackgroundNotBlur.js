@@ -26,6 +26,7 @@
  * @desc Specify the brightness of the menu background between 0 and 255.
  *
  * 2021/05/25 1.0.0 released
+ * 2021/11/29 1.1.0 Repository and directory changes
  */
 /*:ja
  * @target MZ
@@ -47,6 +48,7 @@
  * @desc メニュー背景の明るさを0から255の間で指定してください。
  *
  * 2021/05/25 1.0.0 公開
+ * 2021/11/29 1.1.0 レポジトリ及びディレクトリ変更
  */
 (() => {
   "use strict";

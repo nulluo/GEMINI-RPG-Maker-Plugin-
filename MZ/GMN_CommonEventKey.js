@@ -6,6 +6,7 @@
 // http://opensource.org/licenses/mit-license.php
 /*:
  * 2021/08/01 1.0.0 released
+ * 2021/11/29 1.1.0 Repository and directory changes
  *
  * @plugindesc Execute a common event containing the string specified by the plugin command.
  * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_CommonEventKey.js
@@ -27,6 +28,7 @@
  */
 /*:ja
  * 2021/08/01 1.0.0 公開
+ * 2021/11/29 1.1.0 レポジトリ及びディレクトリ変更
  *
  * @plugindesc プラグインコマンドで指定した文字列を含むコモンイベントを実行します。
  * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_CommonEventKey.js

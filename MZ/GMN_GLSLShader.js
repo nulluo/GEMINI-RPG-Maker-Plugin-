@@ -24,6 +24,7 @@
  * 2021/03/14 1.0.1 Refactoring
  * 2021/03/14 1.0.2 Refactoring
  * 2021/03/20 1.1.0 Fixed variable time not being applied + other refactorings
+ * 2021/11/29 1.2.0 Repository and directory changes
  *
  * @command add
  * @text Add shader.
@@ -64,6 +65,7 @@
  * 2021/03/14 1.0.1 リファクタリング
  * 2021/03/14 1.0.2 リファクタリング
  * 2021/03/20 1.1.0 変数timeが適用できてなかったので修正+その他リファクタリング
+ * 2021/11/29 1.2.0 レポジトリ及びディレクトリ変更
  *
  * @command add
  * @text シェーダー追加

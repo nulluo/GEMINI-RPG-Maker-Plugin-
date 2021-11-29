@@ -21,6 +21,7 @@
  *
  * 2021/09/18 1.0.0 Published.
  * 2021/09/18 1.1.0 Add error handling for error scripts
+ * 2021/11/29 1.2.0 Repository and directory changes
  */
 /*:ja
  * @target MZ
@@ -40,6 +41,7 @@
  *
  * 2021/09/18 1.0.0 公開
  * 2021/09/21 1.1.0 エラーハンドリングの追加
+ * 2021/11/29 1.2.0 レポジトリ及びディレクトリ変更
  */
 "use strict";
 {
