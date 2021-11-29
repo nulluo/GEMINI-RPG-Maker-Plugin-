@@ -9,7 +9,7 @@
 /*:
  * @target MZ
  * @plugindesc Apply a GLSL shader to the picture.
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_GLSLShader.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_GLSLShader.js
  * @author GEMINI
  *
  * @help
@@ -49,7 +49,7 @@
 /*:ja
  * @target MZ
  * @plugindesc ピクチャにGLSLシェーダーを適用します。
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_GLSLShader.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_GLSLShader.js
  * @author ジェミニ
  *
  * @help

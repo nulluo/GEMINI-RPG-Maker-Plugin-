@@ -9,7 +9,7 @@
 /*:
  * @target MZ
  * @plugindesc Unblur menu background.
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_BackgroundNotBlur.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_BackgroundNotBlur.js
  * @author GEMINI
  *
  * @help
@@ -30,7 +30,7 @@
 /*:ja
  * @target MZ
  * @plugindesc メニュー背景をぼかさなくします。
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_BackgroundNotBlur.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_BackgroundNotBlur.js
  * @author ジェミニ
  *
  * @help

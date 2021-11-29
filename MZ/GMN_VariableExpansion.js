@@ -7,7 +7,7 @@
 /*:en
  * @target MZ
  * @plugindesc Display the results of script execution in a window.
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_VariableExpansion.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_VariableExpansion.js
  * @author GEMINI
  *
  * @help
@@ -25,7 +25,7 @@
 /*:ja
  * @target MZ
  * @plugindesc ウィンドウ内にスクリプトの実行結果を表示します。
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_VariableExpansion.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_VariableExpansion.js
  * @author ジェミニ
  *
  * @help

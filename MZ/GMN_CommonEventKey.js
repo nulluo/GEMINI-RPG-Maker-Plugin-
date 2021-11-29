@@ -8,7 +8,7 @@
  * 2021/08/01 1.0.0 released
  *
  * @plugindesc Execute a common event containing the string specified by the plugin command.
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_CommonEventKey.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_CommonEventKey.js
  * @author GEMINI
  * @base PluginCommonBase.js
  * @help Executes a common event containing the string specified in the plugin command.
@@ -29,7 +29,7 @@
  * 2021/08/01 1.0.0 公開
  *
  * @plugindesc プラグインコマンドで指定した文字列を含むコモンイベントを実行します。
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_CommonEventKey.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_CommonEventKey.js
  * @author ジェミニ
  * @base PluginCommonBase.js
  * @help プラグインコマンドで指定した文字列を含むコモンイベントを実行します。

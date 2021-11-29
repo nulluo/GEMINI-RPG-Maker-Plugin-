@@ -9,7 +9,7 @@
 /*:en
  * @target MZ
  * @plugindesc Display status increase/decrease.
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_DescriptionWithFomula.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_DescriptionWithFomula.js
  * @author Gemini
  *
  * @help
@@ -80,7 +80,7 @@
 /*:ja
  * @target MZ
  * @plugindesc ステータス増減を表示します。
- * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/GMN_DescriptionWithFomula.js
+ * @url https://github.com/GEMINIGAMEDEV/plug-in/blob/master/MZ/GMN_DescriptionWithFomula.js
  * @author ジェミニ
  *
  * @help
