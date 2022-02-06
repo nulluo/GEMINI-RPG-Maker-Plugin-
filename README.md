@@ -28,3 +28,4 @@ RPGツクールMV/MZのプラグイン一覧
 | [GMN_DescriptionWithFomula.js](./MZ/GMN_DescriptionWithFomula.js) |未作成| 装備品による能力値増減を自動で説明欄に表示します。
 | [GMN_GLSLShader.js](./MZ/GMN_GLSLShader.js) | 未作成|GLSLで定義したアニメーションをピクチャに適用できます。<br/>※うまく動作しないことがあるため非推奨。
 | [GMN_VariableExpansion.js](./MZ/GMN_VariableExpansion.js)  |未作成| 「文章の表示」をはじめとしたウィンドウ内で`　``　`で囲んだ内容がスクリプトとして解釈されます。<br/>選択肢や文字列ピクチャなど`Window_Base`を継承しているウィンドウならどこでも利用可能。|
+| [GMN_ReadMe.js](./MZ/GMN_ReadMe.js)  |未作成| ReadMeをゲーム内で参照できるようにします。<br> 読み込んだ内容をゲーム画面上で表示する機能は提供していません。<br> 他プラグインやスクリプトを利用してください。|
