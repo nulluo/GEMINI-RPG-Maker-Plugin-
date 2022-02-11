@@ -4,11 +4,10 @@
 // (C)2021 GEMINI
 // This software is released under the MIT License.
 // http://opensource.org/licenses/mit-license.php
-//
-//=============================================================================
-/*:en
+/*:
  * @target MZ
  * @plugindesc Display status increase/decrease.
+ * @base PluginCommonBase
  * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_DescriptionWithFomula.js
  * @author Gemini
  *
@@ -67,7 +66,7 @@
  * @text Character for parameter decrease.
  * @desc A symbol to be added to the number when the parameter is decreased.
  * e.g. when defense decreases by 30 => [defense]-30 with "-" at the beginning of the number.
- * @param param paramName
+ * @param paramName
  * @type string[].
  * @default ["max HP", "max MP", "attack power", "defense power", "magic power", "magic defense", "agility", "luck"]
  * @text Parameter name array
@@ -78,10 +77,12 @@
  * 2021/05/25 1.0.0 released
  * 2021/11/29 1.1.0 Repository and directory changes
  * 2022/02/11 1.1.1 Typographical correction
+ * 2022/02/11 1.2.0 Refactoring
  */
 /*:ja
  * @target MZ
  * @plugindesc ステータス増減を表示します。
+ * @base PluginCommonBase
  * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_DescriptionWithFomula.js
  * @author ジェミニ
  *
@@ -151,31 +152,46 @@
  * 2021/05/25 1.0.0 公開
  * 2021/11/29 1.1.0 レポジトリ及びディレクトリ変更
  * 2022/02/11 1.1.1 誤字修正
+ * 2022/02/11 1.2.0 リファクタ
  */
-(() => {
-  "use strict";
-  const pluginName = document.currentScript.src.match(/^.*\/(.*).js$/)[1];
-  const parameters = PluginManager.parameters(pluginName);
-  const format = parameters["format"];
-  const separator = parameters["separator"];
-  const plusSign = parameters["plusSign"];
-  const minusSign = parameters["minusSign"];
-  const paramName = JSON.parse(parameters["paramName"]);
-  Window_Help.prototype.setItem = function (item) {
-    this.setText(item ? deccription(item) + item.description : "");
+"use strict";
+{
+  const script = document.currentScript;
+  const param = PluginManagerEx.createParameter(script);
+  // プラグインパラメータ名が微妙だったので別の名前にした。
+  const template = param.format;
+  const statuses = param.paramName;
+
+  const getFormattedDescription = (itemParam, status) => {
+    if (itemParam === 0) {
+      return "";
+    }
+    if (itemParam > 0) {
+      return template.format(status, param.plusSign + itemParam);
+    }
+    if (itemParam < 0) {
+      return template.format(status, param.minusSign + Math.abs(itemParam));
+    }
   };
-  const deccription = (item) => {
-    let desc = [];
+
+  const getDescriptionWithStatuses = (item) => {
+    if (!item.etypeId) {
+      return "";
+    }
+    const descriptions = [];
     if (item.etypeId) {
-      for (let i = 0; i < paramName.length; i++) {
-        let param = item.params[i];
-        if (param === 0) continue;
-        if (param > 0) param = plusSign + param;
-        if (param < 0) param = minusSign + Math.abs(param);
-        desc.push(format.format(paramName[i], param));
+      for (let i = 0; i < statuses.length; i++) {
+        const formatted = getFormattedDescription(item.params[i], statuses[i]);
+        formatted && descriptions.push(formatted);
       }
     }
-    const txt = desc.join(separator);
+    const txt = descriptions.join(param.separator);
     return txt ? txt + "\n" : "";
   };
-})();
+
+  Window_Help.prototype.setItem = function (item) {
+    this.setText(
+      item ? getDescriptionWithStatuses(item) + item.description : ""
+    );
+  };
+}
