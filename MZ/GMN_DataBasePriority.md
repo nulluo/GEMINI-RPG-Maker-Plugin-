@@ -17,9 +17,11 @@
   <details>
   <summary>エディタ上の操作と実行結果</summary>
 
-  ![example.1.jpg](GMN_DataBasePriority/example.1.jpg)![example.2.jpg](GMN_DataBasePriority/example.2.jpg)
-  ![example.3.jpg](GMN_DataBasePriority/example.3.jpg)![example.4.jpg](GMN_DataBasePriority/example.4.jpg)
-  
+  ![example.1.jpg](GMN_DataBasePriority/example.1.jpg)
+  ![example.2.jpg](GMN_DataBasePriority/example.2.jpg)
+  ![example.3.jpg](GMN_DataBasePriority/example.3.jpg)
+  ![example.4.jpg](GMN_DataBasePriority/example.4.jpg)
+
   </details>
 2. アイテム・スキル・武器・防具が優先度順に表示されるようになります。<br>
   昇順(1,2,3...の順番)と降順(999999,999998,999997...)を<br>
