@@ -59,13 +59,13 @@
  * @type string
  * @default +
  * @text Character for parameter increase.
- * @desc A symbol to be attached to the numeric combat if the parameter is to be decreased.
+ * @desc A symbol to be added to the number if when the parameter is to be increased.
  * Example: when attack power is increased by 30 => [attack power] +30 with a "+" at the beginning of the number.
  * @param minusSign
  * @type string
  * @default -
  * @text Character for parameter decrease.
- * @desc A symbol to be added to the combat of the number when the parameter is decreased.
+ * @desc A symbol to be added to the number when the parameter is decreased.
  * e.g. when defense decreases by 30 => [defense]-30 with "-" at the beginning of the number.
  * @param param paramName
  * @type string[].
@@ -77,6 +77,7 @@
  *
  * 2021/05/25 1.0.0 released
  * 2021/11/29 1.1.0 Repository and directory changes
+ * 2022/02/11 1.1.1 Typographical correction
  */
 /*:ja
  * @target MZ
@@ -131,13 +132,13 @@
  * @type string
  * @default +
  * @text パラメータ増加を表す文字
- * @desc パラメーターが減少する場合に、数値の戦闘につける記号です。
+ * @desc パラメーターが増加する場合に、数値の先頭につける記号です。
  * 例: 攻撃力が30増加する時 => 【攻撃力】+30 と数値の先頭に「+」が付きます。
  * @param minusSign
  * @type string
  * @default -
  * @text パラメータ減少を表す文字
- * @desc パラメーターが減少する場合に、数値の戦闘につける記号です。
+ * @desc パラメーターが減少する場合に、数値の先頭につける記号です。
  * 例: 防御力が30減少する時 => 【防御力】-30 と数値の先頭に「-」が付きます。
  * @param paramName
  * @type string[]
@@ -149,6 +150,7 @@
  *
  * 2021/05/25 1.0.0 公開
  * 2021/11/29 1.1.0 レポジトリ及びディレクトリ変更
+ * 2022/02/11 1.1.1 誤字修正
  */
 (() => {
   "use strict";

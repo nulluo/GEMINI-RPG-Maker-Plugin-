@@ -4,7 +4,7 @@
 // (C)2021 GEMINI
 // This software is released under the MIT License.
 // http://opensource.org/licenses/mit-license.php
-/*:en
+/*:
  * @target MZ
  * @plugindesc Display the results of script execution in a window.
  * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_VariableExpansion.js
