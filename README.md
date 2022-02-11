@@ -12,7 +12,7 @@
 | [GMN_VariableExpansion.js](./MZ/GMN_VariableExpansion.js)  |[GMN_VariableExpansion](./MZ/GMN_VariableExpansion.md)| 「文章の表示」をはじめとしたウィンドウ内で` `` `で囲んだ内容がスクリプトとして解釈されます。選択肢や文字列ピクチャなど`Window_Base`を継承しているウィンドウならどこでも利用可能です。|
 | [GMN_AutoSave.js](./MZ/GMN_AutoSave.js)  |作成予定| オートセーブが行われるタイミングを変更します。 プラグインパラメータで指定したスイッチによって  マップ切り替え時・戦闘終了時にオートセーブするかを切り替えられます。|
 | [GMN_DataBasePriority.js](./MZ/GMN_DataBasePriority.js)  |作成予定| データベースの項目の表示順を、メモ欄で指定した優先度の順に並び替えられます。  アイテム・スキル・武器・防具が対象です。|
-| `@作成予定`  GMN_OneSpriteCharacter.js |作成予定| 一枚絵をキャラチップにできます。 |
+| [GMN_OneSpriteCharacter.js](./MZ/GMN_OneSpriteCharacter.js) |作成予定| 一枚絵をキャラチップにできます。 |
 | [GMN_DescriptionWithFomula.js](./MZ/GMN_DescriptionWithFomula.js) |[GMN_DescriptionWithFomula](./MZ/GMN_DescriptionWithFomula.md)| 装備品による能力値増減を自動で説明欄に表示します。
 | [GMN_ReadMe.js](./MZ/GMN_ReadMe.js)  |作成予定| ReadMeをゲーム内で参照できるようにします。 読み込んだ内容をゲーム画面上で表示する機能は提供していません。 他プラグインやスクリプトを利用してください。|
 |  `@非推奨`  [GMN_CommonEventKey.js](./MZ/GMN_CommonEventKey.js) |無し|  コモンイベントをID指定ではなく名前指定で動かせる。※並列処理等で使ったときの実行順に難があるため非推奨。
