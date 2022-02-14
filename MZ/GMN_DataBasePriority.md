@@ -1,5 +1,7 @@
 # GMN_DataBasePriority
 
+https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_DataBasePriority.js
+
 データベースの項目の表示順を、メモ欄で指定した優先度の順に並び替えられます。
 
 ## 利用方法

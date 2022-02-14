@@ -1,5 +1,7 @@
 # GMN_DescriptionWithFomula
 
+https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_DescriptionWithFomula.js
+
 装備品の説明文にステータス増減を表示させます。
 
 ![利用例1](./GMN_DescriptionWithFomula/example.1.jpg)

@@ -1,5 +1,7 @@
 # GMN_VariableExpansion
 
+https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_VariableExpansion.js
+
 「文章の表示」をはじめとするウィンドウ内にスクリプトを記述できます。
 
 バッククォート(\`)で囲ったスクリプトを記述すると、該当部分がスクリプトの

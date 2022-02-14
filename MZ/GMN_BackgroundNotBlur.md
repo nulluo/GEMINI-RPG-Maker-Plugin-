@@ -1,5 +1,7 @@
 # GMN_BackgroundNotBlur
 
+https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_BackgroundNotBlur.js
+
 メニュー背景をぼかさなくします。
 
 オプション画面等、マップをキャプチャして背景にする画面すべてに適用されます。

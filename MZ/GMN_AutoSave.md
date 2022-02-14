@@ -1,6 +1,7 @@
 # GMN_AutoSave
 
 オートセーブが行われるタイミングを変更します。
+https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_AutoSave.js
 
 ## 利用方法
 プラグインパラメータで指定したスイッチによって
