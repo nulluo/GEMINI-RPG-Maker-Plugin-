@@ -22,6 +22,8 @@
  */
 /*:ja
  * @plugindesc キャラチップ一枚絵プラグイン
+ * @base PluginCommonBase
+ * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_OneSpriteCharacter.js
  * @author ジェミニ
  * @target MZ
  *
