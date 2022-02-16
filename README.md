@@ -15,8 +15,6 @@
 | [GMN_OneSpriteCharacter.js](./MZ/GMN_OneSpriteCharacter.js) |[GMN_OneSpriteCharacter](./MZ/GMN_OneSpriteCharacter.md)| 一枚絵をキャラチップにできます。 |
 | [GMN_DescriptionWithFomula.js](./MZ/GMN_DescriptionWithFomula.js) |[GMN_DescriptionWithFomula](./MZ/GMN_DescriptionWithFomula.md)| 装備品による能力値増減を自動で説明欄に表示します。
 | [GMN_ReadMe.js](./MZ/GMN_ReadMe.js)  |[GMN_ReadMe](./MZ/GMN_ReadMe.md)| ReadMeをゲーム内で参照できるようにします。 読み込んだ内容をゲーム画面上で表示する機能は提供していません。 他プラグインやスクリプトを利用してください。|
-|  `@非推奨`  [GMN_CommonEventKey.js](./MZ/GMN_CommonEventKey.js) |無し|  コモンイベントをID指定ではなく名前指定で動かせる。※並列処理等で使ったときの実行順に難があるため非推奨。
-|  `@非推奨`  [GMN_GLSLShader.js](./MZ/GMN_GLSLShader.js) |無し|GLSLで定義したアニメーションをピクチャに適用できます。※うまく動作しないことがあるため非推奨。
 
 ## MVプラグイン一覧
 | プラグイン名 | マニュアル |簡易説明 |
@@ -32,7 +30,3 @@
 | `@作成予定`  GMN_ReadMe.js |作成予定| ReadMeをゲーム内で参照できるようにします。 読み込んだ内容をゲーム画面上で表示する機能は提供していません。 他プラグインやスクリプトを利用してください。|
 | `@非推奨`  [GMN_ItemPriority.js](./MV/GMN_ItemPriority.js) |無し| アイテムの並び順を作者が指定した「優先度」順に変更することができます。 より包括的なプラグインである `GMN_DataBasePriority` を作成予定です。|
 | `@非推奨`  [GMN_SkillPriority.js](./MV/GMN_SkillPriority.js) |無し|スキルの並び順を作者が指定した「優先度」順に変更することができます。 より包括的なプラグインである `GMN_DataBasePriority` を作成予定です。|
-|  `@非推奨` [GMN_AssertPlayerPurchasement.js](./MV/GMN_AssertPlayerPurchasement.js) |無し| ショップで売買するたびに,指定した変数が増えるようになります。 |
-|  `@非推奨`  [GMN_SelfVariables.js](./MV/GMN_SelfVariables.js) |無し|セルフスイッチに似たセルフ変数を定義できます。※ほかに上位互換があるため非推奨。
-|  `@非推奨`  [GMN_SetSwitchOnLoad.js](./MV/GMN_SetSwitchOnLoad.js) |無し| ゲームをロードしたときにONになるスイッチを設定できます。|
-|  `@非推奨`  [GMN_WindowPointUnit.js](./MV/GMN_WindowPointUnit.js)|無し|  ダメージに単位を付けられます。 |
