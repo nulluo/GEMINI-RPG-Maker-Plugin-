@@ -5,6 +5,7 @@
 // This software is released under the MIT License.
 // http://opensource.org/licenses/mit-license.php
 /*:
+ * @deprecated
  * @target MZ
  * @plugindesc Sort the database items in the order of priority specified in the memo field.
  * @base PluginCommonBase
@@ -26,10 +27,32 @@
  * Ascending order (1,2,3...) and descending order (99999,99998,99997...) can be selected by plugin parameters.
  * If the priority is the same, they will be sorted by ID as per the standard specification.
  * 3.
- * If the priority is not set in the memo field, * the default priority will be used.
- 3. * If the priority is not set in the memo field, the default priority can be set in the plugin parameter.
+ * If the priority is not set in the memo field,
+ * the default priority will be used.
+ *
+ * [Function for developers]
+ * When the plugin parameter "isScriptEnabled" is enabled.
+ * Sorting script can be executed from outside the plugin.
+ * This is intended for use by scripts and plug-ins.
+ * Can be executed non-destructively.
+ *
+ * [How to use reorder script]
+ *
+ * "window.<plugin name>.sortByPriority(<sort target>)".
+ * Execute.
+ *
+ * "<plugin name>" is the file name of this plugin minus the extension.
+ * "GMN_DataBasePriority" by default.
+ *
+ * <Sorting Target> is an array of database configuration items represented by $dataXxx, etc.
+ * However, each item must have an "id" and "meta" field.
+ * Example: $dataEnemies.slice(1)
+ * Does not change with script execution.
+ *
+ * The return value is a sorted array.
  *
  * 2022/02/10 1.0.0 Release
+ * 2022/02/10 1.1.0 Added a function for developers
  *
  * @param priorityName
  * @text Name of the priority tag.
@@ -58,8 +81,16 @@
  * @min 0
  * @max 999999
  * @max 999999
+ *
+ * @param isScriptEnabled
+ * @text [Function for developers] Enable reorder script.
+ * @desc If enabled, you can run the reorder script from outside the plugin.
+ * @param isScriptEnabled
+ * @type boolean
+ * @default false
  */
 /*:ja
+ * @deprecated
  * @target MZ
  * @plugindesc データベースの項目の表示順を、メモ欄で指定した優先度の順に並び替えられます。
  * @base PluginCommonBase
@@ -84,7 +115,29 @@
  * メモ欄に優先度が設定されていない場合に、
  * プラグインパラメータでデフォルトの優先度を設定できます。
  *
+ * 【開発者向け機能】
+ * プラグインパラメータ "isScriptEnabled" が有効な場合、
+ * プラグイン外部から並び替えスクリプトを実行できます。
+ * スクリプトやプラグインの利用を想定しています。
+ * 非破壊的に実行できます。
+ *
+ * 【並び替えスクリプト利用方法】
+ *
+ * "window.<プラグイン名>.sortByPriority(<並び替え対象>)" を
+ * 実行します。
+ *
+ * <プラグイン名>は本プラグインのファイル名から拡張子を除いたものです。
+ * デフォルトでは "GMN_DataBasePriority"。
+ *
+ * <並び替え対象> は$dataXxxなどに代表されるデータベース設定項目の配列です。
+ * ただし、各項目は必ず "id" および "meta" のフィールドを持つ必要があります。
+ * 例: $dataEnemies.slice(1)
+ * スクリプト実行によって変化しません。
+ *
+ * 返り値は、並び替え済みの配列です。
+ *
  * 2022/02/10 1.0.0 公開
+ * 2022/02/19 1.1.0 開発者向け機能を追加
  *
  * @param priorityName
  * @text 優先度のタグ名
@@ -112,6 +165,13 @@
  * @default 100
  * @min 0
  * @max 999999
+ *
+ * @param isScriptEnabled
+ * @text 【開発者向け機能】並び替えスクリプト有効化
+ * @desc 有効にした場合、プラグイン外部から並び替えスクリプトを
+ * 実行することができます。
+ * @type boolean
+ * @default false
  */
 "use strict";
 {
@@ -135,6 +195,10 @@
   const sortByPriority = (ary) => {
     return ary.slice().sort(compareByPriority);
   };
+  if (param.isScriptEnabled) {
+    const pluginName = PluginManagerEx.findPluginName(script);
+    window[pluginName] = Object.freeze({ sortByPriority: sortByPriority });
+  }
 
   const _Game_Party_weapons = Game_Party.prototype.weapons;
   Game_Party.prototype.weapons = function () {
