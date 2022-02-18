@@ -5,7 +5,6 @@
 // This software is released under the MIT License.
 // http://opensource.org/licenses/mit-license.php
 /*:
- * @deprecated
  * @target MZ
  * @plugindesc Sort the database items in the order of priority specified in the memo field.
  * @base PluginCommonBase
