@@ -15,6 +15,7 @@
 | [GMN_OneSpriteCharacter.js](./MZ/GMN_OneSpriteCharacter.js) |[GMN_OneSpriteCharacter](./MZ/GMN_OneSpriteCharacter.md)| 一枚絵をキャラチップにできます。 |
 | [GMN_DescriptionWithFomula.js](./MZ/GMN_DescriptionWithFomula.js) |[GMN_DescriptionWithFomula](./MZ/GMN_DescriptionWithFomula.md)| 装備品による能力値増減を自動で説明欄に表示します。
 | [GMN_ReadMe.js](./MZ/GMN_ReadMe.js)  |[GMN_ReadMe](./MZ/GMN_ReadMe.md)| ReadMeをゲーム内で参照できるようにします。 読み込んだ内容をゲーム画面上で表示する機能は提供していません。 他プラグインやスクリプトを利用してください。|
+| [GMN_PictureArrange.js](./MZ/GMN_PictureArrange.js)  |[GMN_PictureArrange](./MZ/GMN_PictureArrange.md)| 複数のピクチャを整列して表示できます。|
 
 ## MVプラグイン一覧
 | プラグイン名 | マニュアル |簡易説明 |
