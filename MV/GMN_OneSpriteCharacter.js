@@ -22,6 +22,7 @@
  * 1.0.1 2020/02/10 Fixed disappearing images depending on orientation and walking.
  * 1.0.2 2020/02/11 Added the ability to specify prefixes in plugin parameters.
  * 1.1.0 2021/03/20 Author name change
+ * 1.1.1 2022/03/16 Fixed a bug that prevented the default values from working.
  *
  */
 /*:ja
@@ -39,6 +40,7 @@
  * 1.0.1 2020/02/10 向きや歩行によって画像が消えてしまうのを修正。
  * 1.0.2 2020/02/11 接頭詞をプラグインパラメータで指定できるようにしました。
  * 1.1.0 2021/03/20 作者名変更
+ * 1.1.1 2022/03/16 デフォルト値で動作しないバグを修正
  *
  */
 (function () {
@@ -53,8 +55,7 @@
   // 一枚絵判定を行います。
   //-----------------------------------------------------------------------------
   ImageManager.isOneSprite = function (filename) {
-    var sign = filename.match(/^[\!\@\$]+/);
-    return sign && sign[0].contains(prefix);
+    return filename.contains(prefix);
   };
   var _ImageManager_isBigCharacter = ImageManager.isBigCharacter;
   ImageManager.isBigCharacter = function (filename) {

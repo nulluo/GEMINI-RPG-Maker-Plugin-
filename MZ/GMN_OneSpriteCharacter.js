@@ -13,11 +13,13 @@
  *
  * @help Treat character chips with a specific prefix in the file name as a single picture.
  * The prefix must be specified in the plugin parameters.
+ *
+ * 1.0.0 2022/02/11 First version
+ * 1.0.1 2022/03/16 Fixed a bug that prevented the default values from working.
+ *
  * @param prefix
  * @type string
  * @default &
- *
- * 1.0.0 2022/02/11 First version
  *
  */
 /*:ja
@@ -29,11 +31,13 @@
  *
  * @help ファイル名に特定の接頭詞がついたキャラチップを一枚絵として扱います。
  * 接頭詞はプラグインパラメータで指定してください。
+ *
+ * 1.0.0 2022/02/11 初版
+ * 1.0.1 2022/03/16 デフォルト値で動作しないバグを修正
+ *
  * @param prefix
  * @type string
  * @default &
- *
- * 1.0.0 2022/02/11 初版
  *
  */
 "use strict";
@@ -42,8 +46,7 @@
   const param = PluginManagerEx.createParameter(script);
 
   ImageManager.isOneSprite = function (filename) {
-    const sign = filename.match(/^[\!\@\$]+/);
-    return sign && sign[0].contains(param.prefix);
+    return filename.contains(param.prefix);
   };
   const _ImageManager_isBigCharacter = ImageManager.isBigCharacter;
   ImageManager.isBigCharacter = function (filename) {
