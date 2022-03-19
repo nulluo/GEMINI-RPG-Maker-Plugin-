@@ -8,6 +8,12 @@ https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_BackgroundN
 
 ![利用例1](./GMN_BackgroundNotBlur/example.1.jpg)
 
+---
+
+プラグインに関する問い合わせは [Twitter](https://twitter.com/gemini_gamedev)でお願いいたします。
+
+それ以外の場所は見ていないことが多いので、あらかじめご了承ください。
+
 ## 利用方法
 
 特に設定は必要ありません。

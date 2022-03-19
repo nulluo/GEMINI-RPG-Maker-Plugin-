@@ -4,6 +4,12 @@ https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_DataBasePri
 
 データベースの項目の表示順を、メモ欄で指定した優先度の順に並び替えられます。
 
+---
+
+プラグインに関する問い合わせは [Twitter](https://twitter.com/gemini_gamedev)でお願いいたします。
+
+それ以外の場所は見ていないことが多いので、あらかじめご了承ください。
+
 ## 利用方法
 
 1. アイテム・スキル・武器・防具 のメモ欄に以下のように優先度を記述します。<br>

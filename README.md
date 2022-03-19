@@ -1,5 +1,9 @@
 # RPGツクールMZ/MV 公開プラグイン一覧
 
+プラグインに関する問い合わせは [Twitter](https://twitter.com/gemini_gamedev)でお願いいたします。
+
+それ以外の場所は見ていないことが多いので、あらかじめご了承ください。
+
 ![profile](./profile.png)
 
 * [MZプラグイン一覧]( #MZプラグイン一覧)

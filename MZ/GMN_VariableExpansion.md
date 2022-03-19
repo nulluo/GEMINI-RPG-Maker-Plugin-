@@ -9,6 +9,12 @@ https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_VariableExp
 
 選択肢や文字列ピクチャなど`Window_Base`を継承しているウィンドウならどこでも利用可能です。
 
+---
+
+プラグインに関する問い合わせは [Twitter](https://twitter.com/gemini_gamedev)でお願いいたします。
+
+それ以外の場所は見ていないことが多いので、あらかじめご了承ください。
+
 ## 利用方法
 
 特に設定は必要ありません。
