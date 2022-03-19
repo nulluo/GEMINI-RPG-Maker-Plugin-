@@ -44,7 +44,7 @@ https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_PictureArra
 |scaleX|X軸方向拡大倍率(%指定)|
 |scaleY|Y軸方向拡大倍率(%指定)|
 |opacity|不透明度(0-255で指定)|
-|blendMode|合成方法(0:通常,1:加算,2:減算)|
+|blendMode|合成方法(0:通常,1:加算,2:乗算,3:スクリーン)|
 
 #### arrangeInfos
 

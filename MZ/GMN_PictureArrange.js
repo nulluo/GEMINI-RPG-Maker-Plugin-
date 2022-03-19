@@ -17,7 +17,8 @@
  *
  * Allows multiple pictures to be displayed in an aligned fashion.
  *
- * 2022/02/20 Published
+ * 2022/02/20 1.0.0 Published
+ * 2022/03/20 1.0.1 Description Fixed
  *
  * @command showPictures
  * @text Show aligned pictures
@@ -75,8 +76,10 @@
  * @value 0
  * @option add
  * @value 1
- * @option subtract
+ * @option multiply
  * @value 2
+ * @option screen
+ * @value 3
  * @default 0
  */
 /*~struct~ArrangeInfos:
@@ -106,6 +109,7 @@
  * 複数のピクチャを整列して表示できます。
  *
  * 2022/02/20 v.1.0.0 公開
+ * 2022/03/20 v.1.0.1 説明文修正
  *
  * @command showPictures
  * @text ピクチャ整列表示
@@ -163,8 +167,10 @@
  * @value 0
  * @option 加算
  * @value 1
- * @option 減算
+ * @option 乗算
  * @value 2
+ * @option スクリーン
+ * @value 3
  * @default 0
  */
 /*~struct~ArrangeInfos:ja
