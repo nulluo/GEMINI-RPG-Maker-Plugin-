@@ -20,10 +20,12 @@
 | [GMN_DescriptionWithFomula.js](./MZ/GMN_DescriptionWithFomula.js) |[GMN_DescriptionWithFomula](./MZ/GMN_DescriptionWithFomula.md)| 装備品による能力値増減を自動で説明欄に表示します。
 | [GMN_ReadMe.js](./MZ/GMN_ReadMe.js)  |[GMN_ReadMe](./MZ/GMN_ReadMe.md)| ReadMeをゲーム内で参照できるようにします。 読み込んだ内容をゲーム画面上で表示する機能は提供していません。 他プラグインやスクリプトを利用してください。|
 | [GMN_PictureArrange.js](./MZ/GMN_PictureArrange.js)  |[GMN_PictureArrange](./MZ/GMN_PictureArrange.md)| 複数のピクチャを整列して表示できます。|
+| [GMN_VolumeRange.js](./MZ/GMN_VolumeRange.js)  |[GMN_VolumeRange](./MZ/GMN_VolumeRange.md)| オプション画面での音量間隔をプラグインパラメータで指定できます。|
 
 ## MVプラグイン一覧
 | プラグイン名 | マニュアル |簡易説明 |
 |--|--|--|
 | `@作成予定`  GMN_VariableExpansion.js|作成予定| 「文章の表示」をはじめとしたウィンドウ内で` `` `で囲んだ内容がスクリプトとして解釈されます。選択肢や文字列ピクチャなど`Window_Base`を継承しているウィンドウならどこでも利用可能です。|
-| `@作成予定`  GMN_DataBasePriority.js |作成予定| データベースの項目の表示順を、メモ欄で指定した優先度の順に並び替えられます。  アイテム・スキル・武器・防具が対象です。|
+| GMN_DataBasePriority.js |作成予定| データベースの項目の表示順を、メモ欄で指定した優先度の順に並び替えられます。  アイテム・スキル・武器・防具が対象です。|
 | [GMN_OneSpriteCharacter.js](./MV/GMN_OneSpriteCharacter.js)|作成予定| 一枚絵をキャラチップにできます。 |
+| [GMN_VolumeRange.js](./MV/GMN_VolumeRange.js)  |[GMN_VolumeRange](./MV/GMN_VolumeRange.md)| オプション画面での音量間隔をプラグインパラメータで指定できます。|
