@@ -8,7 +8,7 @@
  * @target MV
  * @plugindesc Sort the database items in the order of priority specified in the memo field.
  * @base PluginCommonBase
- * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_DataBasePriority.js
+ * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MV/GMN_DataBasePriority.js
  * @author GEMINI
  *
  * @help
@@ -50,7 +50,7 @@
  *
  * The return value is a sorted array.
  *
- * 2022/03/20 1.0.0 Release
+ * 2022/04/24 1.0.0 Release
  *
  * @param priorityName
  * @text Name of the priority tag.
@@ -88,11 +88,10 @@
  * @default false
  */
 /*:ja
- * @deprecated
  * @target MV
  * @plugindesc データベースの項目の表示順を、メモ欄で指定した優先度の順に並び替えられます。
  * @base PluginCommonBase
- * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_DataBasePriority.js
+ * @url https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MV/GMN_DataBasePriority.js
  * @author ジェミニ
  *
  * @help
@@ -134,8 +133,7 @@
  *
  * 返り値は、並び替え済みの配列です。
  *
- * 2022/02/10 1.0.0 公開
- * 2022/02/19 1.1.0 開発者向け機能を追加
+ * 2022/04/22 1.0.0 公開
  *
  * @param priorityName
  * @text 優先度のタグ名
