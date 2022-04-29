@@ -22,8 +22,7 @@
 【使用例】
 <details>
 <summary>スクリーンショットを表示する</summary>
-    <img src=./pre_1.png>
-    <img src=./1.png>
+    <img src=./pre_1.png width=50%><img src=./1.png width=50%>
 </details>
 
 ```
@@ -38,9 +37,8 @@
 【使用例】
 <details>
 <summary>スクリーンショットを表示する</summary>
-    <img src=./pre_1.png>
-    <img src=./pre_2.png>
-    <img src=./2_3.png>
+    <img src=./pre_1.png width=50%><img src=./pre_2.png width=50%>
+    <img src=./2_3.png width=50%>
 </details>
 
 ```
@@ -63,9 +61,8 @@
 【使用例】
 <details>
     <summary>スクリーンショットを表示する</summary>
-    <img src=./pre_1.png>
-    <img src=./pre_2.png>
-    <img src=./2_3.png>
+    <img src=./pre_1.png width=50%><img src=./pre_2.png width=50%>
+    <img src=./2_3.png width=50%>
 </details>
 
 ```
