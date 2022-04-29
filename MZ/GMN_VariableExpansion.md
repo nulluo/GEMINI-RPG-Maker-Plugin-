@@ -19,6 +19,10 @@ https://github.com/GEMINIGAMEDEV/RPG-Maker-Plugin/blob/master/MZ/GMN_VariableExp
 
 特に設定は必要ありません。
 
+利用例は以下参照。
+
+- [マップ編](./GMN_VariableExpansion/UseCase_Map.md)
+
 ## プラグインパラメータ
 
 プラグインパラメータはありません。
